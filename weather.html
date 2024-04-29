@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather for {{ location }}</title>
+</head>
+<body>
+    <h1>Weather for {{ location }}</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Temperature (°C)</th>
+            <th>Weather Description</th>
+        </tr>
+        {% for day in daily_weather %}
+            <tr>
+                <td>{{ day.dt_txt }}</td>
+                <td>{{ day.main.temp }}</td>
+                <td>{{ day.weather[0].description }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
